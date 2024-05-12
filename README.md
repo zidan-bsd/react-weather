@@ -1,3 +1,8 @@
+![React-weather-2](https://github.com/zidan-bsd/react-weather/assets/58164324/f4d9ca98-02e8-4270-8e3f-db7a3466d23c)
+
+![React-weather](https://github.com/zidan-bsd/react-weather/assets/58164324/96cc93a0-af5c-46e1-a3f4-e07954c2fdb8)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
