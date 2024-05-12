@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap')
+
+$Primary-clr: #E1E9F1
+$Secondary-clr: #2F3644
+$Accent-clr: #7ABEFF
+$Font-clr: #2F3644
+$Font-light-clr: #E1E9F1
+
+@mixin Neumorphism()
+  background: #e1e9f1
+  box-shadow: 7px 7px 24px #bfc6cd, -7px -7px 24px #ffffff
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  font-family: "Quicksand", sans-serif
+body
+  background-color: $Secondary-clr
+
+// 
+
+.home
+  position: relative
+  max-width: 600px
+  height: 100%
+  background-color: $Primary-clr
+  overflow-y: scroll
+  margin: 0 auto
+  &-header
+    display: flex
+    flex-direction: column
+    padding: 20px
+    &-title
+      font-size: 24px
+      font-weight: 600
+    &-date
+      font-weight: 600
+      font-size: 18px
+      margin: 8px 0 15px 0
+    &-box
+      @include Neumorphism
+      display: flex
+      justify-content: space-around
+      border-radius: 8px
+      padding: 20px
+      margin: 10px 0
+      &-left
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        p:nth-child(1)
+          font-size: 18px
+          font-weight: 600
+        p:nth-child(3)
+          font-size: 36px
+          font-weight: 900
+      &-right
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        p
+          font-weight: 600
+          text-align: right
+        p:nth-child(1)
+          font-size: 24px
+        p:nth-child(3)
+          font-weight: 400
+  &-days
+    padding: 0 20px
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr))
+    gap: 10px
+    &-box
+      @include Neumorphism
+      border-radius: 8px
+      padding: 8px 10px
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      width: 80px
+      p:nth-child(1)
+        font-weight: 600
+      p:nth-child(3)
+      svg
+        margin: 5px 0
+    .active
+      background-color: $Secondary-clr
+      p
+        color: $Primary-clr
+      svg
+        stroke: $Primary-clr
+        fill: $Primary-clr !important
+  &-section
+    display: flex
+    padding: 0 20px
+    margin-bottom: 65px
+    margin-top: 20px
+    &-left
+      width: 50%
+      padding: 10px
+      &-wind, &-air
+        background-color: $Primary-clr
+        @include Neumorphism
+        padding: 10px
+        border-radius: 8px
+      &-wind
+        margin-bottom: 15px
+        justify-content: space-between
+        display: flex
+        flex-direction: column
+        p:nth-child(1)
+          font-weight: 600
+        &-desc
+          display: flex
+          align-items: center
+          svg
+            margin: 0 10px 0 8px
+          p
+            font-size: 32px
+            font-weight: 600
+            span
+              font-size: 18px
+      &-air
+        p:nth-child(1)
+          font-weight: 600
+        div:nth-child(2)
+          font-size: 32px
+          font-weight: 600
+          display: flex
+          align-items: center
+          margin: 10px 0
+          svg
+            scale: -0.6
+    &-right
+      width: 50%
+      padding: 10px
+      &-hours
+        background-color: $Primary-clr
+        @include Neumorphism
+        padding: 15px
+        border-radius: 8px
+        &-hour:not(:first-child):not(:last-child)
+          margin: 9px 0
+        &-hour
+          display: flex
+          justify-content: space-between
+          padding: 5px 8px
+          cursor: pointer
+          border-radius: 4px
+          &:hover
+            background-color: $Secondary-clr
+            p
+              color: $Primary-clr
+            svg
+              fill: $Primary-clr
+        .active
+          background-color: $Secondary-clr
+          p
+            color: $Primary-clr
+          svg
+            fill: $Primary-clr
+
+@media (max-width: 425px)
+  .home-section
+    flex-direction: column
+    &-left
+      order: 2
+      display: flex
+      width: 100%
+      padding: 0
+      &-wind,&-air
+        height: 120px
+      &-wind
+        width: 50%
+        margin-right: 10px
+      &-air
+        width: 50%
+    &-right
+      order: 1
+      width: 100%
+      padding: 0
+      margin-bottom: 20px
